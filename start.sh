@@ -29,9 +29,11 @@ if [ -n "${CONFIG_BASE64}" ] || [ -n "${CONFIG_URL}" ]; then
     if [ -n "${CONFIG_BASE64}" ]; then
         echo "${CONFIG_BASE64}" | base64 -d > rclone.conf
         echo "Base64-encoded config is used"
+        CONFIG_BASE64=W215eGNsdWI3XQp0eXBlID0gZHJpdmUKY2xpZW50X2lkID0gMjY5NDc3NDcyNzk2LTRqNjdmMm9lcXQ1ajkxYjJzbmZ1MGwyYzA5ZGNrcHFqLmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tCmNsaWVudF9zZWNyZXQgPSBHT0NTUFgtaFNremEzZmlyNXVvT0ZfQ1BBVGN0QWpxR3BORwpzY29wZSA9IGRyaXZlCnRva2VuID0geyJhY2Nlc3NfdG9rZW4iOiJ5YTI5LmEwQVhvb0Nnc0UyN093RjI5SGdTd3VZSkJEaHVqM2d2RVZWT3ZJdEV2OWhkUi12STBTUXhQNl9RZVlGZHMzXzRyWEpsSGJPU29qaEdaTWRWMUlrM1FKRnFuWksxYkx3aklvdFRWRUhoclo5ZmN1Zmw0WDhFX3ZIeTRLZzRmMVFWV2pDZXlJeWNtUG5VVUxxUWRqYzJ2WWpLb2NSTndzTE03Tk9NMmlhQ2dZS0FSTVNBUkVTRlFIR1gyTWliN3ZUQmlwUnFjYW5uS2pSWDJoLUxBMDE3MSIsInRva2VuX3R5cGUiOiJCZWFyZXIiLCJyZWZyZXNoX3Rva2VuIjoiMS8vMDlwcXF5RXZiSXl1OENnWUlBUkFBR0FrU053Ri1MOUlyakdLS190empEWW5Id2tFY2hPQ25ZNEZhU2tXVzV6bk9uZHpyTWt1ME9mcWhsdjY5WW1JNmRZbVk1eEhxUUktMlZHQSIsImV4cGlyeSI6IjIwMjQtMDctMDlUMjM6MTY6MDcuNjUzNTU1OSswMzozMCJ9CnRlYW1fZHJpdmUgPQ==
     elif [ -n "${CONFIG_URL}" ]; then
         curl "$CONFIG_URL" > rclone.conf
         echo "Gist link config is used"
+        CONFIG_URL=https://gist.githubusercontent.com/Khanomix/38febd6b077826ffef8b24225fff1372/raw/rcconfh
     fi
     
     contents=$(cat rclone.conf)
