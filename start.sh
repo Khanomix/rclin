@@ -18,7 +18,7 @@ fi
 
 if [ -z "${PORT}" ]; then
     echo "No PORT env var, using 8080 port"
-    PORT=8585
+    PORT=8080
 else
     echo "PORT env var found, using $PORT port"
 fi
